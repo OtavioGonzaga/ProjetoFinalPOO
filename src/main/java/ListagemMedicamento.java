@@ -52,6 +52,7 @@ public class ListagemMedicamento extends javax.swing.JFrame {
         deletarBotao = new javax.swing.JButton();
         editarInfoLabel = new javax.swing.JLabel();
         detalhesBotao = new javax.swing.JButton();
+        calcularDosagemBotao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -109,6 +110,13 @@ public class ListagemMedicamento extends javax.swing.JFrame {
             }
         });
 
+        calcularDosagemBotao.setText("Calcular dosagem");
+        calcularDosagemBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularDosagemBotaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,13 +124,18 @@ public class ListagemMedicamento extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarInfoLabel)
-                            .addComponent(tituloLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                        .addComponent(detalhesBotao)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(editarInfoLabel)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(tituloLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(calcularDosagemBotao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(detalhesBotao)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(deletarBotao)))
                 .addContainerGap())
@@ -130,20 +143,16 @@ public class ListagemMedicamento extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(deletarBotao)
-                            .addComponent(detalhesBotao))
-                        .addGap(23, 23, 23))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(tituloLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editarInfoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloLabel)
+                    .addComponent(calcularDosagemBotao)
+                    .addComponent(detalhesBotao)
+                    .addComponent(deletarBotao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(editarInfoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -165,6 +174,22 @@ public class ListagemMedicamento extends javax.swing.JFrame {
         form.setVisible(true);
         form.preencherForm(m);
     }//GEN-LAST:event_detalhesBotaoActionPerformed
+
+    private void calcularDosagemBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularDosagemBotaoActionPerformed
+        int selectedRow = medicamentoTabela.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Selecione uma linha para calcular a dosagem.");
+            return;
+        }
+
+        MedicamentoTableModel model = (MedicamentoTableModel) medicamentoTabela.getModel();
+        Medicamento m = model.getMedicamento(selectedRow);
+
+        FormCalcDosagem form = FormCalcDosagem.getInstance();
+        form.setVisible(true);
+        form.setMedicamento(m);
+    }//GEN-LAST:event_calcularDosagemBotaoActionPerformed
 
     private void medicamentoTabelaComponentShown(java.awt.event.ComponentEvent evt) {// GEN-FIRST:event_medicamentoTableComponentShown
         // TODO add your handling code here:
@@ -219,6 +244,7 @@ public class ListagemMedicamento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton calcularDosagemBotao;
     private javax.swing.JButton deletarBotao;
     private javax.swing.JButton detalhesBotao;
     private javax.swing.JLabel editarInfoLabel;
