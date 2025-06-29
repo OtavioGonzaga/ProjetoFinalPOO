@@ -24,7 +24,7 @@ public class ListagemMedicamento extends javax.swing.JFrame {
         initComponents();
 
         MedicamentoTableModel model = new MedicamentoTableModel();
-        this.medicamentoTable.setModel(model);
+        this.medicamentoTabela.setModel(model);
     }
 
     public static ListagemMedicamento getInstance() {
@@ -46,14 +46,14 @@ public class ListagemMedicamento extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        medicamentoTable = new javax.swing.JTable();
-        h1 = new javax.swing.JLabel();
+        medicamentoTabela = new javax.swing.JTable();
+        tituloLabel = new javax.swing.JLabel();
         deletarBotao = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        editarInfoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        medicamentoTable.setModel(new javax.swing.table.DefaultTableModel(
+        medicamentoTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -76,18 +76,18 @@ public class ListagemMedicamento extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        medicamentoTable.addComponentListener(new java.awt.event.ComponentAdapter() {
+        medicamentoTabela.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
-                medicamentoTableComponentShown(evt);
+                medicamentoTabelaComponentShown(evt);
             }
         });
-        jScrollPane1.setViewportView(medicamentoTable);
-        if (medicamentoTable.getColumnModel().getColumnCount() > 0) {
-            medicamentoTable.getColumnModel().getColumn(2).setMinWidth(180);
+        jScrollPane1.setViewportView(medicamentoTabela);
+        if (medicamentoTabela.getColumnModel().getColumnCount() > 0) {
+            medicamentoTabela.getColumnModel().getColumn(2).setMinWidth(180);
         }
 
-        h1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        h1.setText("Medicamentos");
+        tituloLabel.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        tituloLabel.setText("Medicamentos");
 
         deletarBotao.setText("Deletar");
         deletarBotao.addActionListener(new java.awt.event.ActionListener() {
@@ -96,54 +96,53 @@ public class ListagemMedicamento extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Para editar um valor, clique sobre a célula");
+        editarInfoLabel.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        editarInfoLabel.setForeground(new java.awt.Color(102, 102, 102));
+        editarInfoLabel.setText("Para editar um valor, clique sobre a célula");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(h1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editarInfoLabel)
+                            .addComponent(tituloLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
                         .addComponent(deletarBotao)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(deletarBotao))
+                        .addComponent(deletarBotao)
+                        .addGap(23, 23, 23))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(h1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
-                .addGap(8, 8, 8)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(tituloLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editarInfoLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void medicamentoTableComponentShown(java.awt.event.ComponentEvent evt) {// GEN-FIRST:event_medicamentoTableComponentShown
+    private void medicamentoTabelaComponentShown(java.awt.event.ComponentEvent evt) {// GEN-FIRST:event_medicamentoTableComponentShown
         // TODO add your handling code here:
     }// GEN-LAST:event_medicamentoTableComponentShown
 
     private void deletarBotaoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_deletarBotaoActionPerformed
-        int linhaSelecionada = medicamentoTable.getSelectedRow();
+        int linhaSelecionada = medicamentoTabela.getSelectedRow();
         if (linhaSelecionada == -1) {
             JOptionPane.showMessageDialog(this, "Selecione uma linha para remover.", "Aviso",
                     JOptionPane.WARNING_MESSAGE);
@@ -156,7 +155,7 @@ public class ListagemMedicamento extends javax.swing.JFrame {
             return;
         }
 
-        MedicamentoTableModel tableModel = ((MedicamentoTableModel) this.medicamentoTable.getModel());
+        MedicamentoTableModel tableModel = ((MedicamentoTableModel) this.medicamentoTabela.getModel());
 
         tableModel.removerLinha(linhaSelecionada);
     }// GEN-LAST:event_deletarBotaoActionPerformed
@@ -192,9 +191,9 @@ public class ListagemMedicamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deletarBotao;
-    private javax.swing.JLabel h1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel editarInfoLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable medicamentoTable;
+    private javax.swing.JTable medicamentoTabela;
+    private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }

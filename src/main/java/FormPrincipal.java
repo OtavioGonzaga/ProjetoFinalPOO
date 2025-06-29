@@ -35,20 +35,30 @@ public class FormPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         barraDeMenu = new javax.swing.JMenuBar();
-        MenuMedicamento = new javax.swing.JMenu();
+        menuMedicamento = new javax.swing.JMenu();
         cadastrarMedicamentoItem = new javax.swing.JMenuItem();
         abrirListagemMedicamentoItem = new javax.swing.JMenuItem();
+        menuLaboratorio = new javax.swing.JMenu();
+        cadastrarLaboratorioItem = new javax.swing.JMenuItem();
+        abrirListagemLaboratorioItem = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciador de Medicamentos");
@@ -63,61 +73,113 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Ctrl + M");
 
-        MenuMedicamento.setText("Medicamento");
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Cadastrar laboratório");
 
-        cadastrarMedicamentoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N,
-                java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jLabel6.setText("Ctrl + L");
+
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setText("Visualizar laboratórios");
+
+        jLabel8.setText("Ctrl + A");
+
+        menuMedicamento.setText("Medicamento");
+
+        cadastrarMedicamentoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         cadastrarMedicamentoItem.setText("Cadastrar");
         cadastrarMedicamentoItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarMedicamentoItemActionPerformed(evt);
             }
         });
-        MenuMedicamento.add(cadastrarMedicamentoItem);
+        menuMedicamento.add(cadastrarMedicamentoItem);
 
-        abrirListagemMedicamentoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M,
-                java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        abrirListagemMedicamentoItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         abrirListagemMedicamentoItem.setText("Abrir listagem");
         abrirListagemMedicamentoItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrirListagemMedicamentoItemActionPerformed(evt);
             }
         });
-        MenuMedicamento.add(abrirListagemMedicamentoItem);
+        menuMedicamento.add(abrirListagemMedicamentoItem);
 
-        barraDeMenu.add(MenuMedicamento);
+        barraDeMenu.add(menuMedicamento);
+
+        menuLaboratorio.setText("Laboratório");
+
+        cadastrarLaboratorioItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        cadastrarLaboratorioItem.setText("Cadastrar");
+        cadastrarLaboratorioItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarLaboratorioItemActionPerformed(evt);
+            }
+        });
+        menuLaboratorio.add(cadastrarLaboratorioItem);
+
+        abrirListagemLaboratorioItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        abrirListagemLaboratorioItem.setText("Abrir listagem");
+        abrirListagemLaboratorioItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrirListagemLaboratorioItemActionPerformed(evt);
+            }
+        });
+        menuLaboratorio.add(abrirListagemLaboratorioItem);
+
+        barraDeMenu.add(menuLaboratorio);
 
         setJMenuBar(barraDeMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel2))
-                                .addContainerGap(220, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8))
+                .addContainerGap(217, Short.MAX_VALUE))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(114, 114, 114)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel3))
-                                .addContainerGap(192, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void abrirListagemLaboratorioItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirListagemLaboratorioItemActionPerformed
+        ListagemLaboratorio.getInstance().setVisible(true);
+    }//GEN-LAST:event_abrirListagemLaboratorioItemActionPerformed
+
+    private void cadastrarLaboratorioItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarLaboratorioItemActionPerformed
+        FormLaboratorio.getInstance().setVisible(true);
+    }//GEN-LAST:event_cadastrarLaboratorioItemActionPerformed
 
     private void cadastrarMedicamentoItemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadastrarMedicamentoItemActionPerformed
         FormMedicamento.getInstance().setVisible(true);
@@ -157,14 +219,22 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MenuMedicamento;
+    private javax.swing.JMenuItem abrirListagemLaboratorioItem;
     private javax.swing.JMenuItem abrirListagemMedicamentoItem;
     private javax.swing.JMenuBar barraDeMenu;
+    private javax.swing.JMenuItem cadastrarLaboratorioItem;
     private javax.swing.JMenuItem cadastrarMedicamentoItem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu menuLaboratorio;
+    private javax.swing.JMenu menuMedicamento;
     // End of variables declaration//GEN-END:variables
 }
