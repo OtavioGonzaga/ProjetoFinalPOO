@@ -1,11 +1,14 @@
 // Otavio Luiz Gonzaga - RA: a2648920
 
 public class Controlado extends Medicamento implements Receituavel {
-	private String tipoReceita = "";
-	private boolean necessitaRetencaoReceita = false;
+	private String tipoReceita;
+	private boolean necessitaRetencaoReceita;
 
 	public Controlado() {
 		super();
+
+		this.tipoReceita = "";
+		this.necessitaRetencaoReceita = false;
 	}
 
 	// Sobreescrita

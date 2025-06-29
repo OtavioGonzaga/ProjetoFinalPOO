@@ -7,6 +7,9 @@ public class Fitoterapico extends Medicamento {
 
 	public Fitoterapico() {
 		super();
+
+		this.plantaOrigem = "";
+		this.exigeRegistroAnvisa = false;
 	}
 
 	// Sobreecrita

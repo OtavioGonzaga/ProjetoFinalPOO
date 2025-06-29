@@ -2,11 +2,14 @@
 
 public class Comum extends Medicamento implements Receituavel {
 
-    private boolean vendidoSemReceita = false;
-    private String viaAdministracao = "";
+    private boolean vendidoSemReceita;
+    private String viaAdministracao;
 
     public Comum() {
         super();
+
+        this.vendidoSemReceita = false;
+        this.viaAdministracao = "";
     }
 
     // Sobreescrita

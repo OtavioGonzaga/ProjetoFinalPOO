@@ -1,12 +1,16 @@
 // Otavio Luiz Gonzaga - RA: a2648920
 
 public class Generico extends Comum {
-	private String nomeGenerico = "";
-	private String nomeComercial = "";
-	private Laboratorio laboratorioOriginal = new Laboratorio();
+	private String nomeGenerico;
+	private String nomeComercial;
+	private Laboratorio laboratorioOriginal;
 
 	public Generico() {
 		super();
+
+		this.nomeGenerico = "";
+		this.nomeComercial = "";
+		this.laboratorioOriginal = new Laboratorio();
 	}
 
 	public String getNomeGenerico() {

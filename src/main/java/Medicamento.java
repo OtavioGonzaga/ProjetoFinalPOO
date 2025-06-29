@@ -1,12 +1,16 @@
 // Otavio Luiz Gonzaga - RA: a2648920
 
 public abstract class Medicamento {
-	private float preco = 0f;
-	private String nome = "";
-	private String principioAtivo = "";
-	private float dosagemMg = 0f;
+	private float preco;
+	private String nome;
+	private String principioAtivo;
+	private float dosagemMg;
 
 	protected Medicamento() {
+		this.preco = 0f;
+		this.nome = "";
+		this.principioAtivo = "";
+		this.dosagemMg = 0f;
 	}
 
 	protected abstract float calcDosagem(float peso) throws NumeroNegativoException,

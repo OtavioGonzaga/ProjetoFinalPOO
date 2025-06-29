@@ -1,13 +1,18 @@
 // Otavio Luiz Gonzaga - RA: a2648920
 
 public class Laboratorio {
-	private String nome = "";
-	private String cnpj = "";
-	private String endereco = "";
-	private String telefone = "";
-	private String email = "";
+	private String nome;
+	private String cnpj;
+	private String endereco;
+	private String telefone;
+	private String email;
 
 	public Laboratorio() {
+		this.nome = "";
+		this.cnpj = "";
+		this.endereco = "";
+		this.telefone = "";
+		this.email = "";
 	}
 
 	public String getNome() {
