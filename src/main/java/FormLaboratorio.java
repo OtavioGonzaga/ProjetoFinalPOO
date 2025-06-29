@@ -32,6 +32,13 @@ public class FormLaboratorio extends javax.swing.JFrame implements FormularioCom
         return instance;
     }
 
+    // Sobreescrita
+    @Override
+    public void setVisible(boolean b) {
+        limparFormulario();
+        super.setVisible(b);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -345,5 +352,17 @@ public class FormLaboratorio extends javax.swing.JFrame implements FormularioCom
         laboratorio.setEndereco(endereco);
         laboratorio.setTelefone(telefone);
         laboratorio.setEmail(email);
+    }
+
+    @Override
+    public void preencherForm(Laboratorio laboratorio) {
+        this.nomeInput.setText(laboratorio.getNome());
+        this.cnpjInput.setText(laboratorio.getCnpj());
+        this.enderecoInput.setText(laboratorio.getEndereco());
+        this.telefoneInput.setText(laboratorio.getTelefone());
+        this.emailInput.setText(laboratorio.getEmail());
+
+        this.repaint();
+        this.revalidate();
     }
 }

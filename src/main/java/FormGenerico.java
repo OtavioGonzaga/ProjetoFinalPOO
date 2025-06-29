@@ -154,4 +154,15 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
         medicamento.setNomeGenerico(nomeGenerico);
         medicamento.setLaboratorioOriginal(laboratorioOriginal);
     }
+
+    @Override
+    public void preencherForm(Generico medicamento) {
+        this.comumFormulario.preencherForm(medicamento);
+        this.nomeComercialInput.setText(medicamento.getNomeComercial());
+        this.nomeGenericoInput.setText(medicamento.getNomeGenerico());
+        this.laboratorioSelect.setSelectedItem(medicamento.getLaboratorioOriginal());
+        
+        this.repaint();
+        this.revalidate();
+    }   
 }

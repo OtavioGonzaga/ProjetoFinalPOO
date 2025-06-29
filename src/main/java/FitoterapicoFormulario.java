@@ -109,4 +109,13 @@ public class FitoterapicoFormulario extends javax.swing.JPanel implements Formul
         medicamento.setExigeRegistroAnvisa(exigeRegistroAnvisa);
         medicamento.setPlantaOrigem(plantaOrigem);
     }
+
+    @Override
+    public void preencherForm(Fitoterapico medicamento) {
+        this.plantaOrigemInput.setText(medicamento.getPlantaOrigem());
+        this.exigeRegistroAnvisaCheckbox.setSelected(medicamento.getExigeRegistroAnvisa());
+        
+        this.repaint();
+        this.revalidate();
+    }
 }

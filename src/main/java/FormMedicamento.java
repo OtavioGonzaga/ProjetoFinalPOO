@@ -57,6 +57,39 @@ public class FormMedicamento extends javax.swing.JFrame implements FormularioCom
     }
 
     @Override
+    public void preencherForm(Medicamento medicamento) {
+        this.nomeInput.setText(medicamento.getNome());
+        this.precoInput.setText(Float.toString(medicamento.getPreco()));
+        this.principioAtivoInput.setText(medicamento.getPrincipioAtivo());
+        this.dosagemInput.setText(Float.toString(medicamento.getDosagemMg()));
+
+        switch (medicamento) {
+            case Generico g -> {
+                genericoPanel.preencherForm(g);
+                this.generoSelect.setSelectedItem("Genérico");
+            }
+            case Comum c -> {
+                comumPanel.preencherForm(c);
+                this.generoSelect.setSelectedItem("Comum");
+            }
+            case Controlado ctrl -> {
+                controladoPanel.preencherForm(ctrl);
+                this.generoSelect.setSelectedItem("Controlado");
+            }
+            case Fitoterapico fito -> {
+                fitoterapicoPanel.preencherForm(fito);
+                this.generoSelect.setSelectedItem("Fitoterápico");
+            }
+            default -> {
+            }
+        }
+
+        this.repaint();
+        this.revalidate();
+    }
+
+    // Sobreescrita
+    @Override
     public void setVisible(boolean b) {
         limparFormulario();
         super.setVisible(b);
@@ -355,8 +388,8 @@ public class FormMedicamento extends javax.swing.JFrame implements FormularioCom
         generoSelect.repaint();
         generoSelect.revalidate();
 
-        FormularioComponente[] subFormularios = new FormularioComponente[] {
-                comumPanel, genericoPanel, controladoPanel, fitoterapicoPanel
+        FormularioComponente[] subFormularios = new FormularioComponente[]{
+            comumPanel, genericoPanel, controladoPanel, fitoterapicoPanel
         };
 
         for (FormularioComponente subFormulario : subFormularios) {

@@ -107,4 +107,13 @@ public class FormControlado extends javax.swing.JPanel implements FormularioComp
         medicamento.setTipoReceita(tipoReceita);
         medicamento.setNecessitaRetencaoReceita(necessitaRetencaoReceita);
     }
+
+    @Override
+    public void preencherForm(Controlado medicamento) {
+        this.tipoReceitaInput.setText(medicamento.getTipoReceita());
+        this.necessitaRetencaoReceitaCheckbox.setSelected(medicamento.getNecessitaRetencaoReceita());
+        
+        this.repaint();
+        this.revalidate();
+    }
 }

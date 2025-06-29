@@ -115,4 +115,13 @@ public class FormComum extends javax.swing.JPanel implements FormularioComponent
         comum.setVendidoSemReceita(this.receitaCheckbox.isSelected());
         comum.setViaAdministracao(this.viaAdministracaoInput.getText());
     }
+
+    @Override
+    public void preencherForm(Comum medicamento) {
+        this.receitaCheckbox.setSelected(medicamento.getVendidoSemReceita());
+        this.viaAdministracaoInput.setText(medicamento.getViaAdministracao());
+        
+        this.repaint();
+        this.revalidate();
+    }
 }

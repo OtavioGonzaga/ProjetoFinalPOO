@@ -10,7 +10,9 @@
  * @author otavio
  */
 public interface FormularioComponente<T> {
-    void limparFormulario();
+    public void limparFormulario();
 
-    void setarDados(T dado) throws Exception;
+    public void setarDados(T dado) throws Exception;
+    
+    public void preencherForm(T dado);
 }
