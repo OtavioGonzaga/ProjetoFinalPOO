@@ -53,7 +53,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="ComumFormulario" name="comumFormulario">
+    <Component class="FormComum" name="comumFormulario">
     </Component>
     <Component class="javax.swing.JLabel" name="nomeGenericoLabel">
       <Properties>

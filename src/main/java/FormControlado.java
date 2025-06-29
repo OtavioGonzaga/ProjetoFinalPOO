@@ -9,12 +9,12 @@
  *
  * @author otavio
  */
-public class ControladoFormulario extends javax.swing.JPanel implements FormularioComponente<Controlado> {
+public class FormControlado extends javax.swing.JPanel implements FormularioComponente<Controlado> {
 
     /**
      * Creates new form ControladoFormulario
      */
-    public ControladoFormulario() {
+    public FormControlado() {
         initComponents();
     }
 
@@ -25,7 +25,7 @@ public class ControladoFormulario extends javax.swing.JPanel implements Formular
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         tipoReceitaLabel = new javax.swing.JLabel();
@@ -47,31 +47,27 @@ public class ControladoFormulario extends javax.swing.JPanel implements Formular
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tipoReceitaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 256,
-                                                Short.MAX_VALUE)
-                                        .addComponent(tipoReceitaInput))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(necessitaRetencaoReceitaLabel,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                                        .addComponent(necessitaRetencaoReceitaCheckbox,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tipoReceitaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                    .addComponent(tipoReceitaInput))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(necessitaRetencaoReceitaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                    .addComponent(necessitaRetencaoReceitaCheckbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tipoReceitaLabel)
-                                        .addComponent(necessitaRetencaoReceitaLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tipoReceitaInput, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(necessitaRetencaoReceitaCheckbox))));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipoReceitaLabel)
+                    .addComponent(necessitaRetencaoReceitaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipoReceitaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(necessitaRetencaoReceitaCheckbox)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void necessitaRetencaoReceitaCheckboxActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_necessitaRetencaoReceitaCheckboxActionPerformed

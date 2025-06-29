@@ -9,7 +9,7 @@ public class MedicamentoTableModel extends AbstractTableModel {
     private final List<Medicamento> medicamentos;
 
     public MedicamentoTableModel() {
-        this.medicamentos = MedicamentoDB.getInstance().getMedicamentos();
+        this.medicamentos = BDMedicamento.getInstance().getMedicamentos();
     }
 
     @Override

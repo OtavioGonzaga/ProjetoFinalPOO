@@ -13,21 +13,21 @@ import java.util.Optional;
  *
  * @author otavio
  */
-public class MedicamentoDB {
+public class BDMedicamento {
     private final List<Medicamento> medicamentos;
 
-    private MedicamentoDB() {
+    private BDMedicamento() {
         this.medicamentos = new ArrayList<>();
     }
 
     // MÉTODO SINGLETON
-    public static MedicamentoDB getInstance() {
+    public static BDMedicamento getInstance() {
         return MedicamentoDBHolder.INSTANCE;
     }
 
     private static class MedicamentoDBHolder {
 
-        private static final MedicamentoDB INSTANCE = new MedicamentoDB();
+        private static final BDMedicamento INSTANCE = new BDMedicamento();
     }
 
     public List<Medicamento> getMedicamentos() {
