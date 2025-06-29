@@ -141,7 +141,7 @@ public class FormMedicamento extends javax.swing.JFrame implements FormularioCom
         );
         painelCamposEspecificosLayout.setVerticalGroup(
             painelCamposEspecificosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 143, Short.MAX_VALUE)
+            .addGap(0, 222, Short.MAX_VALUE)
         );
 
         salvarBotao.setText("Salvar");
@@ -228,7 +228,7 @@ public class FormMedicamento extends javax.swing.JFrame implements FormularioCom
                     .addComponent(salvarBotao)
                     .addComponent(cancelarBotao)
                     .addComponent(resetarBotao))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

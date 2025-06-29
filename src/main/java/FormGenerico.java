@@ -15,6 +15,15 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
      */
     public FormGenerico() {
         initComponents();
+        carregarLaboratorios();
+    }
+
+    private void carregarLaboratorios() {
+        laboratorioSelect.removeAllItems();
+
+        for (Laboratorio l : BDLaboratorio.getInstance().getLaboratorios()) {
+            laboratorioSelect.addItem(l);
+        }
     }
 
     /**
@@ -32,6 +41,8 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
         nomeGenericoInput = new javax.swing.JTextField();
         nomeComercialLabel = new javax.swing.JLabel();
         nomeComercialInput = new javax.swing.JTextField();
+        laboratorioLabel = new javax.swing.JLabel();
+        laboratorioSelect = new javax.swing.JComboBox<>();
 
         nomeGenericoLabel.setText("Nome genérico");
 
@@ -42,6 +53,14 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
         });
 
         nomeComercialLabel.setText("Nome comercial");
+
+        laboratorioLabel.setText("Laboratório");
+
+        laboratorioSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                laboratorioSelectActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,6 +78,10 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
                         .addGap(18, 18, 18)
                         .addComponent(nomeComercialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(comumFormulario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(laboratorioLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(laboratorioSelect, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,9 +94,17 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeGenericoInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nomeComercialInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(nomeComercialInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(laboratorioLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(laboratorioSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void laboratorioSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laboratorioSelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_laboratorioSelectActionPerformed
 
     private void nomeGenericoInputActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_nomeGenericoInputActionPerformed
         // TODO add your handling code here:
@@ -81,6 +112,8 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private FormComum comumFormulario;
+    private javax.swing.JLabel laboratorioLabel;
+    private javax.swing.JComboBox<Laboratorio> laboratorioSelect;
     private javax.swing.JTextField nomeComercialInput;
     private javax.swing.JLabel nomeComercialLabel;
     private javax.swing.JTextField nomeGenericoInput;
@@ -108,6 +141,7 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
 
         String nomeComercial = this.nomeComercialInput.getText();
         String nomeGenerico = this.nomeGenericoInput.getText();
+        Laboratorio laboratorioOriginal = (Laboratorio) this.laboratorioSelect.getSelectedItem();
 
         if (nomeComercial.isBlank()) {
             throw new IllegalArgumentException("Preencha o campo \"Nome comercial\"");
@@ -118,5 +152,6 @@ public class FormGenerico extends javax.swing.JPanel implements FormularioCompon
 
         medicamento.setNomeComercial(nomeComercial);
         medicamento.setNomeGenerico(nomeGenerico);
+        medicamento.setLaboratorioOriginal(laboratorioOriginal);
     }
 }
